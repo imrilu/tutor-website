@@ -572,8 +572,7 @@ input[type='checkbox'] {
 }
 
 .navbar .logo-image img {
-    width: 6.625rem;
-	height: 2rem;
+    width: 20rem;
 }
 
 .navbar .logo-text {
@@ -610,7 +609,7 @@ input[type='checkbox'] {
 }
 
 .navbar .nav-item .nav-link {
-	padding-top: 0.625rem;
+	padding-top: 4rem;
 	padding-bottom: 0.625rem;
 	color: #f1f1f8;
 	text-decoration: none;
@@ -1849,13 +1848,13 @@ a:hover.back-to-top {
 	}
 
 	.offcanvas-collapse {
-		position: static;
+		/*position: static;*/
 		top: auto;
 		bottom: auto;
-		left: auto;
+		left: 30%;
 		width: auto;
 		padding-right: 0;
-		padding-left: 0;
+		padding-left: 10rem;
 		background-color: transparent;
 		overflow-y: visible;
 		visibility: visible;
@@ -1887,6 +1886,7 @@ a:hover.back-to-top {
 
 	.navbar .social-icons {
 		margin-left: 0.5rem;
+		margin-top: 3rem;
 	}
 
 	.navbar .fa-stack {
