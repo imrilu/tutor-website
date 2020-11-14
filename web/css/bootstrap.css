@@ -470,6 +470,11 @@ mark,
   content: "\2014\00A0";
 }
 
+.img-fluid-header {
+  width: 800px;
+  height: auto;
+}
+
 .img-fluid {
   max-width: 100%;
   height: auto;
