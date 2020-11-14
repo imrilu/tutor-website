@@ -23,7 +23,7 @@
 			var $anchor = $(this);
 			$('html, body').stop().animate({
 				scrollTop: $($anchor.attr('href')).offset().top
-			}, 600, 'easeInOutExpo');
+			}, 1000, 'easeInOutExpo');
 			event.preventDefault();
 		});
     });
@@ -315,4 +315,26 @@
 		$(this).blur();
 	});
 
+
+
+    //===== Section Menu Active
+
+    var scrollLink = $('.page-scroll');
+    // Active link switching
+    $(window).scroll(function () {
+        var scrollbarLocation = $(this).scrollTop();
+
+        scrollLink.each(function () {
+
+            var sectionOffset = $(this.hash).offset();
+
+            if (sectionOffset !== undefined &&
+                sectionOffset.top - 73 <= scrollbarLocation) {
+                $(this).parent().addClass('active');
+                $(this).parent().siblings().removeClass('active');
+            }
+        });
+    });
+
 })(jQuery);
+
