@@ -829,7 +829,9 @@ input[type='checkbox'] {
 }
 
 .tabs .p-heading {
-	margin-bottom: 3.125rem;
+	margin-bottom: 2rem;
+	margin-top: 2rem;
+	direction: rtl;
 	text-align: center;
 }
 
@@ -1420,6 +1422,10 @@ a:hover.back-to-top {
 	margin-bottom: 2.5rem;
 }
 
+.ex-basic-1 .list-unstyled.list-icon-lg .media-center {
+	margin-bottom: 2.5rem;
+}
+
 .ex-basic-1 .list-unstyled.list-icon-lg .list-icon {
 	width: 3rem;
 	height: 3rem;
@@ -1746,7 +1752,7 @@ a:hover.back-to-top {
 
 	/* Features */
 	.tabs .fa-stack {
-		margin-right: 1rem;
+		margin-left: 1rem;
 		font-size: 2.25rem;
 	}
 
@@ -1840,7 +1846,7 @@ a:hover.back-to-top {
 	}
 
 	.p-heading {
-		width: 34rem;
+		width: 40rem;
 		margin-right: auto;
 		margin-left: auto;
 	}
@@ -1962,13 +1968,18 @@ a:hover.back-to-top {
 		right: 0;
 	}
 
+	.tabs #tab-1 .first .fa-stack-left {
+		position: absolute;
+		left: 0;
+	}
+
 	.tabs #tab-1 .first .media-body {
 		max-width: 12.625rem;
 		text-align: right;
 	}
 
 	.tabs #tab-1 img {
-		margin-top: 0;
+		margin-top: 6rem;
 		margin-bottom: 0;
 	}
 
@@ -2125,7 +2136,7 @@ a:hover.back-to-top {
 	}
 
 	.tabs img {
-		width: 18.75rem;
+		width: auto;
 	}
 
 	.tabs #tab-1 .list-unstyled {
@@ -2140,6 +2151,12 @@ a:hover.back-to-top {
 		max-width: 16.375rem;
 		margin-right: 5.75rem;
 		margin-left: auto;
+	}
+
+	.tabs #tab-1 .first .media-body-left {
+		max-width: 16.375rem;
+		margin-right: 5.75rem;
+		margin-left: 6rem;
 	}
 
 	.tabs #tab-2 h3 {
