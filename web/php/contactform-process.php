@@ -1,26 +1,27 @@
 <?php
+
+require("PHPMailer-5.2-stable/class.smtp.php");
+require("PHPMailer-5.2-stable/class.phpmailer.php");
+
 $errorMSG = "";
 
 if (empty($_POST["name"])) {
-    $errorMSG = "Name is required ";
+    $name = "Undefined...";
 } else {
     $name = $_POST["name"];
 }
 
 if (empty($_POST["email"])) {
-    $errorMSG = "Email is required ";
+    $email = "Undefined...";
 } else {
     $email = $_POST["email"];
 }
 
-if (empty($_POST["message"])) {
-    $errorMSG = "Message is required ";
+if (empty($_POST["phone"])) {
+    $phone = "Undefined...";
 } else {
-    $message = $_POST["message"];
+    $phone = $_POST["phone"];
 }
-
-$EmailTo = "yourname@domain.com";
-$Subject = "New message from Leno landing page";
 
 // prepare email body text
 $Body = "";
@@ -30,15 +31,33 @@ $Body .= "\n";
 $Body .= "Email: ";
 $Body .= $email;
 $Body .= "\n";
-$Body .= "Message: ";
-$Body .= $message;
+$Body .= "Phone: ";
+$Body .= $phone;
 $Body .= "\n";
 
-// send email
-$success = mail($EmailTo, $Subject, $Body, "From:".$email);
+$mail = new PHPMailer();
+
+//$mail->SMTPDebug = 3;                               // Enable verbose debug output
+
+$mail->isSMTP();                                      // Set mailer to use SMTP
+$mail->Host = 'smtp.gmail.com';  // Specify main and backup SMTP servers
+$mail->SMTPAuth = true;                               // Enable SMTP authentication
+$mail->Username = 'kidudstudents@gmail.com';                 // SMTP username
+$mail->Password = 'k1dud123Stu';                           // SMTP password
+$mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+$mail->Port = 587;                                    // TCP port to connect to
+
+$mail->From = 'donotreply@kidud.co.il';
+$mail->FromName = 'Kidud';
+$mail->addAddress('imri.luzzattov@gmail.com');     // Add a recipient
+
+$mail->isHTML(true);                                  // Set email format to HTML
+
+$mail->Subject = 'New Kidud Student';
+$mail->Body    = $Body;
 
 // redirect to success page
-if ($success && $errorMSG == ""){
+if ($mail->send() && $errorMSG == ""){
    echo "success";
 }else{
     if($errorMSG == ""){
@@ -48,3 +67,4 @@ if ($success && $errorMSG == ""){
     }
 }
 ?>
+
