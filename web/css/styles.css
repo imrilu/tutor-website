@@ -121,7 +121,10 @@ a:hover {
 }
 
 .hr-heading {
-	display: inline-block;
+
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 	width: 4.5rem;
 	height: 0.125rem;
 	margin-top: 0;
@@ -1236,13 +1239,6 @@ input[type='checkbox'] {
 
 .slider-2 .h2-heading {
 	text-align: center;
-}
-
-.slider-2 .hr-heading {
-	display: block;
-	margin-right: auto;
-	margin-bottom: 3.75rem;
-	margin-left: auto;
 }
 
 .slider-2 .slider-container {
