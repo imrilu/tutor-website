@@ -1059,6 +1059,7 @@ input[type='checkbox'] {
 
 .basic-2 p {
 	margin-bottom: 1.75rem;
+	line-height: 2.5;
 }
 
 
@@ -2001,6 +2002,7 @@ a:hover.back-to-top {
 	/* Details 1 */
 	.basic-2 .image-container {
 		margin-bottom: 0;
+
 	}
 
 	.basic-2 .text-container {
@@ -2205,7 +2207,7 @@ a:hover.back-to-top {
 	}
 
 	.basic-2 h2 {
-		width: 20rem;
+		/*width: 20rem;*/
 	}
 	/* end of details 1 */
 
