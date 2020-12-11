@@ -758,8 +758,8 @@ input[type='checkbox'] {
 /*     Testimonials     */
 /************************/
 .slider-1 {
-	padding-top: 7rem;
-	padding-bottom: 7rem;
+	padding-top: 10rem;
+	padding-bottom: 10rem;
 }
 
 .slider-1 .slider-container {
@@ -2227,6 +2227,7 @@ a:hover.back-to-top {
 
 	.basic-2 h2 {
 		/*width: 20rem;*/
+		text-align: center;
 	}
 	/* end of details 1 */
 

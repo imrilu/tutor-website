@@ -254,6 +254,19 @@
         }
     });
 
+    /* Contact Form */
+    $("#contactForm2").validator().on("submit", function(event) {
+        if (event.isDefaultPrevented()) {
+            // handle the invalid form...
+            cformError();
+            csubmitMSG(false, "Please fill all fields!");
+        } else {
+            // everything looks good!
+            event.preventDefault();
+            csubmitForm2();
+        }
+    });
+
     function csubmitForm() {
         // initiate variables with form content
         var name = $("#cname").val();
@@ -263,6 +276,27 @@
             type: "POST",
             url: "php/contactform-process.php",
             data: "name=" + name + "&email=" + email + "&phone=" + phone,
+            success: function(text) {
+                if (text.startsWith("success")) {
+                    cformSuccess();
+                } else {
+                    cformError();
+                    csubmitMSG(false, text);
+                }
+            }
+        });
+    }
+
+    function csubmitForm2() {
+        // initiate variables with form content
+        var name = $("#cname2").val();
+        var email = $("#cemail2").val();
+        var phone = $("#cphone2").val();
+        var message = $("#cmessage2").val();
+        $.ajax({
+            type: "POST",
+            url: "php/contactus-process.php",
+            data: "name=" + name + "&email=" + email + "&phone=" + phone + "$message=" + message,
             success: function(text) {
                 if (text.startsWith("success")) {
                     cformSuccess();
