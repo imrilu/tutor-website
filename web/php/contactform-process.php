@@ -23,17 +23,26 @@ if (empty($_POST["phone"])) {
     $phone = $_POST["phone"];
 }
 
+if (empty($_POST["message"])) {
+    $message = "Undefined...";
+} else {
+    $message = $_POST["message"];
+}
+
 // prepare email body text
 $Body = "";
 $Body .= "Name: ";
 $Body .= $name;
-$Body .= "\n";
+$Body .= "<br>";
 $Body .= "Email: ";
 $Body .= $email;
-$Body .= "\n";
+$Body .= "<br>";
 $Body .= "Phone: ";
 $Body .= $phone;
-$Body .= "\n";
+$Body .= "<br>";
+$Body .= "Message: ";
+$Body .= $message;
+$Body .= "<br>";
 
 $mail = new PHPMailer();
 

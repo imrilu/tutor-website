@@ -255,7 +255,7 @@
     });
 
     /* Contact Form */
-    $("#contactForm2").validator().on("submit", function(event) {
+    $("#contactUsFull").validator().on("submit", function(event) {
         if (event.isDefaultPrevented()) {
             // handle the invalid form...
             cformError();
@@ -295,8 +295,8 @@
         var message = $("#cmessage2").val();
         $.ajax({
             type: "POST",
-            url: "php/contactus-process.php",
-            data: "name=" + name + "&email=" + email + "&phone=" + phone + "$message=" + message,
+            url: "php/contactform-process.php",
+            data: "name=" + name + "&email=" + email + "&phone=" + phone + "&message=" + message,
             success: function(text) {
                 if (text.startsWith("success")) {
                     cformSuccess();
