@@ -278,7 +278,7 @@
             data: "name=" + name + "&email=" + email + "&phone=" + phone,
             success: function(text) {
                 if (text.startsWith("success")) {
-                    cformSuccess();
+                    cformSuccess2();
                 } else {
                     cformError();
                     csubmitMSG(false, text);
@@ -299,10 +299,10 @@
             data: "name=" + name + "&email=" + email + "&phone=" + phone + "&message=" + message,
             success: function(text) {
                 if (text.startsWith("success")) {
-                    cformSuccess();
+                    cformSuccess2();
                 } else {
                     cformError();
-                    csubmitMSG(false, text);
+                    csubmitMSG2(false, text);
                 }
             }
         });
@@ -311,6 +311,13 @@
     function cformSuccess() {
         $("#contactForm")[0].reset();
         csubmitMSG(true, "ההודעה נשלחה!");
+        $("input").removeClass('notEmpty'); // resets the field label after submission
+        $("textarea").removeClass('notEmpty'); // resets the field label after submission
+    }
+
+    function cformSuccess2() {
+        $("#contactForm")[0].reset();
+        csubmitMSG2(true, "ההודעה נשלחה");
         $("input").removeClass('notEmpty'); // resets the field label after submission
         $("textarea").removeClass('notEmpty'); // resets the field label after submission
     }
@@ -328,6 +335,15 @@
             var msgClasses = "h3 text-center";
         }
         $("#cmsgSubmit").removeClass().addClass(msgClasses).text(msg);
+    }
+
+    function csubmitMSG2(valid, msg) {
+        if (valid) {
+            var msgClasses = "sentApprove";
+        } else {
+            var msgClasses = "sentApprove";
+        }
+        alert(msg);
     }
 
 
